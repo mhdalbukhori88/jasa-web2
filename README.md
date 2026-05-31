@@ -1,36 +1,71 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Webnesia — Jasa Pembuatan Website Profesional
 
-## Getting Started
+Website company profile / landing page profesional untuk bisnis jasa pembuatan website. Dibangun dengan **Next.js 16 (App Router)**, **TypeScript**, dan **Tailwind CSS v4**. Siap di-deploy ke **Vercel**.
 
-First, run the development server:
+## ✨ Fitur
+
+- Desain modern, profesional, dan fully responsive (mobile, tablet, desktop)
+- Animasi halus (scroll reveal, floating elements)
+- Section lengkap: Hero, Statistik, Layanan, Keunggulan, Cara Kerja, Portofolio, Harga, Tentang, Testimoni, FAQ, CTA, dan Kontak
+- Form kontak yang langsung terhubung ke WhatsApp
+- Tombol WhatsApp mengambang
+- SEO siap pakai: metadata Open Graph, `sitemap.xml`, `robots.txt`, dan structured data (JSON-LD)
+- Mudah dikustomisasi lewat satu file konfigurasi
+
+## 🛠️ Kustomisasi
+
+Semua data bisnis Anda diatur di dua file:
+
+| File | Isi |
+|------|-----|
+| `src/lib/site.ts` | Nama brand, tagline, email, nomor telepon, **nomor WhatsApp**, alamat, sosial media |
+| `src/lib/data.ts` | Layanan, keunggulan, langkah kerja, paket harga, portofolio, testimoni, statistik, FAQ |
+
+> **Penting:** Ganti nomor `whatsapp` di `src/lib/site.ts` dengan nomor Anda (format internasional tanpa `+` atau spasi, contoh: `6281234567890`).
+
+## 🚀 Menjalankan Secara Lokal
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Buka [http://localhost:3000](http://localhost:3000) di browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📦 Build Produksi
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm run build
+npm run start
+```
 
-## Learn More
+## ☁️ Deploy ke Vercel
 
-To learn more about Next.js, take a look at the following resources:
+1. Push project ini ke repository GitHub/GitLab/Bitbucket Anda.
+2. Buka [vercel.com](https://vercel.com), klik **Add New → Project**, lalu import repository tersebut.
+3. Vercel otomatis mendeteksi Next.js — cukup klik **Deploy**. Tidak perlu konfigurasi tambahan.
+4. Setelah live, tambahkan domain kustom Anda di **Settings → Domains**.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Alternatif via CLI:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm i -g vercel
+vercel
+```
 
-## Deploy on Vercel
+## 📁 Struktur Project
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+src/
+├── app/
+│   ├── layout.tsx      # Layout & SEO metadata global
+│   ├── page.tsx        # Halaman utama (merangkai semua section)
+│   ├── globals.css     # Tema warna & animasi
+│   ├── sitemap.ts      # Sitemap otomatis
+│   ├── robots.ts       # robots.txt otomatis
+│   └── icon.svg        # Favicon
+├── components/         # Komponen tiap section
+└── lib/
+    ├── site.ts         # Konfigurasi bisnis
+    └── data.ts         # Konten website
+```
